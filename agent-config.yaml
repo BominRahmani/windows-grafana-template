@@ -1,9 +1,9 @@
 integrations:
   prometheus_remote_write:
   - basic_auth:
-      password: <your grafana.com password> 
-      username: <your grafana.com username>
-    url: <your prometheus push endpoint>
+      password: prompass
+      username: promuser
+    url: promendpoint
   agent:
     enabled: true
     relabel_configs:
@@ -33,9 +33,9 @@ logs:
   configs:
   - clients:
     - basic_auth:
-        password: <your loki password>
-        username: <your loki username>
-      url: <your loki push endpoint>
+        password: lokipass
+        username: lokiuser
+      url: lokiendpoint
     name: integrations/windows
     positions:
       filename: /tmp/positions.yaml
@@ -114,9 +114,9 @@ metrics:
   - name: integrations/windows_exporter
     remote_write:
     - basic_auth:
-        password: <your grafana.com password>
-        username: <your grafana.com username>
-      url: <your prometheus push endpoint> 
+        password: prompass
+        username: promuser
+      url: promendpoint
       # Add here any snippet that belongs to the `metrics.configs.scrape_configs` section.
       # For a correct indentation, paste snippets copied from Grafana Cloud at the beginning of the line.
   global:
